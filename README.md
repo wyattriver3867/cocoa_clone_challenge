@@ -1,3 +1,3 @@
 # Cocoa Clone Challenge
 
-CCC
+Upload for homework.
