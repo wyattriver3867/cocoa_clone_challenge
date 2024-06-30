@@ -15,6 +15,12 @@
 .welcome-header__text {
   width: 60%;
   color: #4c4c4c;
+  margin-bottom: 20px;
+}
+
+.welcome-header__text2 {
+  width: 50%;
+  color: red;
 }
 
 #login-form {
