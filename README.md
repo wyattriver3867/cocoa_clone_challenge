@@ -1,3 +1,4 @@
 # Cocoa Clone Challenge
 
-Upload for homework.
+Uploaded for homework.
+240704 Follow rest of Class, Due to finish project.
