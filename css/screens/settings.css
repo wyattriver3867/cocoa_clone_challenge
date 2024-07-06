@@ -1,15 +1,26 @@
 .settings__setting {
   padding: 18px 0;
   border-bottom: var(--main-border);
-  font-size: 20px;
+  font-size: 17px;
 
   display: flex;
   align-items: center;
-  gap: 15px;
+  justify-content: space-between;
 }
 
 .settings__setting i {
   font-size: 22px;
   width: 30px;
   color: var(--color-gray);
+}
+
+.settings__setting_column:first-child {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.settings__setting_column:last-child {
+  color: var(--color-gary);
+  opacity: 0.5;
 }
