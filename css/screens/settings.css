@@ -14,13 +14,13 @@
   color: var(--color-gray);
 }
 
-.settings__setting_column:first-child {
+.settings__setting-column:first-child {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.settings__setting_column:last-child {
+.settings__setting-column:last-child {
   color: var(--color-gary);
   opacity: 0.5;
 }
