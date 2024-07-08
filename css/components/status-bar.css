@@ -9,6 +9,14 @@
   background-color: rgb(238, 238, 238);
 }
 
+.status-bar--color-chat {
+  background-color: #abc1d1;
+}
+
+chat.html .status-bar {
+  background-color: #abc1d1;
+}
+
 .status-bar__column {
   width: 33%;
 }
