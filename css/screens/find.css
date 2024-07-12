@@ -111,3 +111,49 @@
 .open-post__heart-count span {
   margin-left: 3px;
 }
+
+@keyframes heartBeat-icon {
+  0% {
+    color: white;
+    transform: none;
+  }
+  25% {
+    color: red;
+  }
+  50% {
+    color: yellow;
+    transform: scale(3);
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: white;
+    transform: none;
+  }
+}
+
+.open-post__photo:hover i {
+  will-change: transform;
+  animation: heartBeat-icon 0.75s ease-out infinite;
+}
+
+@keyframes heartBeat-text {
+  0% {
+    color: white;
+  }
+  33% {
+    color: red;
+  }
+  66% {
+    color: orange;
+  }
+  100% {
+    color: white;
+  }
+}
+
+.open-post__photo:hover span {
+  will-change: transform;
+  animation: heartBeat-text 0.1s linear infinite;
+}
