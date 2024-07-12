@@ -1,6 +1,6 @@
 #chat-screen {
   background-color: #abc1d1;
-  height: 11000vh;
+  height: 500vh;
 }
 
 #chat-screen .alt-header,
@@ -17,10 +17,25 @@
 }
 
 .main-chat {
-  margin-top: 120px;
+  margin-top: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@keyframes timeJumpRotate {
+  0% {
+    transform: rotateX(-45deg);
+    /* transform: translateY(20px); 2개 이상 애니메이션은 안됨. */
+    opacity: 0;
+  }
+  /* 20% {
+    transform: translateY(-20px);
+  } */
+  100% {
+    transform: rotateX(-360deg);
+    opacity: 1;
+  }
 }
 
 .chat__timestamp {
@@ -30,12 +45,48 @@
   font-size: 14px;
   border-radius: 25px;
   margin-bottom: 25px;
+
+  animation: timeJumpRotate 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
 }
 
 .message-row {
   width: 100%;
   display: flex;
   margin-bottom: 25px;
+
+  transform: translateY(50px);
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.message-row:nth-child(2) {
+  animation-delay: 0s;
+}
+
+.message-row:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.message-row:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.message-row:nth-child(5) {
+  animation-delay: 0.45s;
+}
+
+.message-row:last-child {
+  animation-delay: 0.6s;
 }
 
 .message-row img {
@@ -101,10 +152,13 @@
   padding: 5px 25px;
   box-sizing: border-box;
   align-items: center;
+  transition: all 0.3s ease-in-out;
 }
 
 .reply .reply__column:first-child {
   width: 10%;
+  /* display: flex;
+  justify-content: center; */
 }
 
 .reply .reply__column:last-child {
@@ -118,20 +172,21 @@
 
 .reply input {
   padding: 12px;
-  width: 100%;
+  width: 90%;
   border: var(--main-border);
   border-radius: 20px;
+  transition: all 0.3s ease-in-out;
 }
 
 .reply__column:last-child > i,
 .reply__column:last-child button {
   position: absolute;
-  right: -20px;
+  right: 5vw;
   top: 5px;
 }
 
 .reply__column:last-child > i {
-  right: 19px;
+  right: 12vw;
   top: 20px;
 }
 
@@ -150,4 +205,26 @@
 .reply__column button:focus,
 .reply__column button:active {
   outline: none;
+}
+
+.reply .reply__column:first-child,
+.reply .fa-face-smile,
+.reply button {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-face-smile,
+.reply:focus-within button {
+  opacity: 0;
+  /* visibility: hidden; */
+}
+
+.reply:focus-within input {
+  width: 85vw;
+  transform: translateX(-12%) translateY(-80px);
+}
+
+.reply:focus-within {
+  transform: translateY(80px);
 }
